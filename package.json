@@ -1,0 +1,17 @@
+{
+  "name": "drupal-theme-codefrequency",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "node-sass": "^4.5.3",
+    "sass": "^1.0.0-beta.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build-css": "node-sass --include-path scss scss/chartist.scss css/chartist.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

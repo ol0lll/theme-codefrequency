@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first Chartist Tests</title>
+    <link rel="stylesheet"
+          href="css/chartist.css">
+  </head>
+  <body>
+
+    <div class="box">
+      <h3> Seven theme </h3>
+      <div class="ct-chart-seven ct-perfect-fourth"></div>
+    </div>
+
+    <div class="box">
+        <h3> Classy theme </h3>
+        <div class="ct-chart-classy ct-perfect-fourth"></div>
+    </div>
+
+    <script src="bower_components/chartist/dist/chartist.min.js"></script>
+    <script>
+      var seven_data = {
+        // A labels array that can contain any sort of values
+        labels: ['8.1', '8.2', '8.3', '8.4'],
+        // Our series array that contains series objects or in this case series data arrays
+        series: [
+          [62, 293, 783, 286],
+          [-20, -39, -35, -109]
+        ]
+      };
+
+      var classy_data = {
+        // A labels array that can contain any sort of values
+        labels: ['8.1', '8.2', '8.3', '8.4'],
+        // Our series array that contains series objects or in this case series data arrays
+        series: [
+          [81,45, 30, 53],
+          [-26, -17, -10, -30]
+        ]
+      };
+
+      var options = {
+        width: '500px',
+        height: '500px',
+        high: 1000,
+        low: -1000,
+        showArea: true,
+        showLine: false,
+        showPoint: true,
+        fullWidth: true,
+        axisX: {
+          showLabel: true,
+          showGrid: false
+        }
+      };
+
+      // Create a new line chart object where as first parameter we pass in a selector
+      // that is resolving to our chart container element. The Second parameter
+      // is the actual data object. As a third parameter we pass in our custom options.
+      new Chartist.Line('.ct-chart-seven', seven_data, options);
+      new Chartist.Line('.ct-chart-classy', classy_data, options);
+    </script>
+
+  </body>
+</html>
