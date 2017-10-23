@@ -16,7 +16,8 @@
         <h3> Classy theme </h3>
         <div class="ct-chart-classy ct-perfect-fourth"></div>
     </div>
-    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-axistitle@0.0.1/dist/chartist-plugin-axistitle.min.js"></script>
     <!-- <script src="bower_components/chartist/dist/chartist.min.js"></script> -->
     <script>
       var seven_data = {
@@ -51,7 +52,30 @@
         axisX: {
           showLabel: true,
           showGrid: false
-        }
+        },
+        plugins: [
+          Chartist.plugins.ctAxisTitle({
+            axisX: {
+              axisTitle: 'Version',
+              axisClass: 'ct-axis-title',
+              offset: {
+                x: 0,
+                y: 25
+              },
+              textAnchor: 'middle'
+            },
+            axisY: {
+              axisTitle: 'Lines of code',
+              axisClass: 'ct-axis-title',
+              offset: {
+                x: 0,
+                y: 0
+              },
+              textAnchor: 'middle',
+              flipTitle: false
+            }
+          })
+        ]
       };
 
       // Create a new line chart object where as first parameter we pass in a selector
